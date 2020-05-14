@@ -11,8 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig":{
+              "path": "extra-webpack.config.js"
+            },
             "outputPath": "dist/VISTAS-Admin-Panel",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/tailwind.scss"
             ],
             "scripts": []
           },
@@ -60,8 +64,11 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig":{
+              "path": "extra-webpack.config.js"
+            },
             "browserTarget": "VISTAS-Admin-Panel:build"
           },
           "configurations": {
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "VISTAS-Admin-Panel"
+    }
+  },
+  "defaultProject": "VISTAS-Admin-Panel",
+  "cli": {
+    "analytics": "cb94e593-9e09-4c84-8e3e-e3f287ed2b96"
+  }
 }
