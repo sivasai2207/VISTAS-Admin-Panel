@@ -1,32 +1,60 @@
-<div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-    <div class="sm:flex sm:items-center px-6 py-4">
-      <div
-        class="flex items-center justify-center sm:flex-col sm:w-24 sm:border sm:border-gray-500 sm:rounded-full"
-      >
-        <img
-          class="block sm:mx-auto mx-0 flex-shrink-0 h-16 sm:h-12"
-          src="https://angular.io/assets/images/logos/angular/angular.svg"
-          alt="Angular Logo"
-        />
-        <img
-          class="block sm:mx-auto mx-0 flex-shrink-0 h-16 sm:h-12"
-          src="https://tailwindcss.com/android-chrome-512x512.png"
-          alt="Tailwind CSS Logo"
-        />
-      </div>
-  
-      <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
-        <p class="text-xl leading-tight">Tailwind CSS & Angular CLI</p>
-        <p class="text-sm leading-tight text-gray-600">
-          With custom webpack configuration!
-        </p>
-        <div class="mt-4">
-          <button
-            class="text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal"
-          >
-            GO
-          </button>
+<div class="flex  justify-center h-full ">
+    <div class="bg-white w-1/2">
+        <h1 class="text-gray-700 text-3xl text-center mb-4">Question Paper</h1>
+        <hr><hr><hr>
+ <form [formGroup]="myForm" class="text-gray-900">
+         Value: {{ myForm.value | json }}
+        <div formArrayName="Questions">
+
+            <div *ngFor="let Question of QuestionForms.controls; let i=index" [formGroupName]="i">
+               
+                <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+                    Question:
+                <input matInput  formControlName="Question" class="border rounded shadow-inner  w-full py-2 px-4 outline">
+                </mat-form-field>
+                <br>
+
+                <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+                    A:
+                    <input matInput  formControlName="A" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                </mat-form-field>
+
+                <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+                    B:
+                    <input matInput  formControlName="B" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                </mat-form-field>
+
+                <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+                    C:
+                    <input matInput  formControlName="C" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                </mat-form-field>
+                <mat-form-field class="my-3 border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                    D:
+                    <input matInput  formControlName="D" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                </mat-form-field>
+                <br>
+
+                <mat-form-field class="my-3" mr-5>
+                    Answer:
+                    <select formControlName="Answer" id="Answer" mr-5>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+
+                </mat-form-field>
+                <br><br>
+
+                <button class="py-1 border-red-700 bg-red-600 text-white ml-2" mat-raised-button color="warn" (click)="deleteQuestion(i)">Delete This Question</button>
+                <br><br><hr><hr><hr><br>
+
+            </div>
+
         </div>
-      </div>
+
+            <button class="border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" (click)="addQuestion()">Add Question</button>
+
+     </form>
     </div>
-  </div>
+</div>
