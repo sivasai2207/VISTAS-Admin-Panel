@@ -2,7 +2,7 @@
     <div class="bg-white w-1/2">
         <h1 class="text-gray-700 text-3xl text-center mb-4">Question Paper</h1>
         <hr><hr><hr>
- <form [formGroup]="myForm" class="text-gray-900">
+ <form [formGroup]="myForm" class="text-gray-900"(ngSubmit)="submitHandler()">
          Value: {{ myForm.value | json }}
 
          <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
@@ -21,27 +21,28 @@
 
                 <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
                     A:
-                    <input matInput  formControlName="A" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                    <input matInput  formControlName="A" class="border rounded shadow-inner w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
 
-                <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+                <mat-form-field class="my-3 border rounded shadow-inner w-full py-1 px-2 outline-none focus:shadow-outline">
                     B:
                     <input matInput  formControlName="B" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
 
                 <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
                     C:
-                    <input matInput  formControlName="C" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                    <input matInput  formControlName="C" class="border rounded shadow-inner w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
                 <mat-form-field class="my-3 border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
                     D:
-                    <input matInput  formControlName="D" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                    <input matInput  formControlName="D" class="border rounded shadow-inner w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
                 <br>
 
-                <mat-form-field class="my-3" mr-5>
-                    Answer:
-                    <select matNativeControl formControlName="Answer" mr-5>
+                Answer:
+                <mat-form-field  class="my-2  shadow-inner" mr-5>
+                
+                    <select matNativeControl formControlName="Answer">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
@@ -58,6 +59,12 @@
         </div>
 
             <button class="border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" (click)="addQuestion()">Add Question</button>
+           <br>
+           <br>
+           <br>
+           <br>
+           
+            <button class="border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit Form</button>
 
      </form>
     </div>

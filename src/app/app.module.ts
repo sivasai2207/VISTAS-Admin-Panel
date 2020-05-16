@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -11,7 +12,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from '../../src/app/shared/routing/app-routing.module';
 import { QuestionsComponent } from './components/questions/questions.component';
 
 
@@ -19,6 +20,9 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
+import { AuthService } from "./shared/services/auth.service";
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 
 @NgModule({
@@ -26,7 +30,8 @@ import { environment } from '../environments/environment';
     AppComponent,
     QuestionsComponent,
     SignInComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,10 +44,11 @@ import { environment } from '../environments/environment';
     MatChipsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    BrowserAnimationsModule,
 
-
+    
   ],
-  providers: [],
+  providers: [AuthService,AngularFirestore],
   bootstrap: [AppComponent],
 
   schemas: [
