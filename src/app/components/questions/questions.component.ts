@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray ,Validators} from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFireAuth } from "@angular/fire/auth";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -17,7 +19,7 @@ export class QuestionsComponent implements OnInit {
   loading = false;
   success = false;
 
-  constructor(private fb: FormBuilder,public afs: AngularFirestore) { }
+  constructor(private fb: FormBuilder,public afs: AngularFirestore,public afAuth: AngularFireAuth,    public router: Router ) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -67,7 +69,12 @@ export class QuestionsComponent implements OnInit {
 
     this.loading = false;
   }
-
+Logout(){
+  return this.afAuth.auth.signOut().then(() => {
+    localStorage.removeItem('user');
+    this.router.navigate(['sign-in']);
+  })
+}
 }
 
 

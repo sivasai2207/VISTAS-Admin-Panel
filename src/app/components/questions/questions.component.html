@@ -1,13 +1,21 @@
+<nav class="flex items-center justify-between flex-wrap bg-Ateneo-Blue p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-bold text-xl">VISTAS Admin Panel</span>
+    </div>
+    <div>
+        <button class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-trasparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" (click)="Logout()">
+            Logout
+        </button>
+    </div>
+</nav>
 <div class="flex  justify-center h-full ">
-    <div class="bg-white w-1/2">
+    <div class="bg-white-smoke w-1/2">
         <h1 class="text-gray-700 text-3xl text-center mb-4">Question Paper</h1>
         <hr><hr><hr>
  <form [formGroup]="myForm" class="text-gray-900"(ngSubmit)="submitHandler()">
-         Value: {{ myForm.value | json }}
-
-         <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
+       <mat-form-field class="my-3 border  rounded w-full py-1 px-2 outline-none focus:shadow-outline">
             Exam Name:
-            <input matInput formControlName="examname">
+            <input matInput formControlName="examname"  class="shadow-inner  border rounded bg-gray-200 hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:shadow-outline focus:border-gray-300">
         </mat-form-field>
         <div formArrayName="Questions">
 
@@ -24,9 +32,9 @@
                     <input matInput  formControlName="A" class="border rounded shadow-inner w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
 
-                <mat-form-field class="my-3 border rounded shadow-inner w-full py-1 px-2 outline-none focus:shadow-outline">
+                <mat-form-field class="my-3 border rounded  w-full py-1 px-2 outline-none focus:shadow-outline">
                     B:
-                    <input matInput  formControlName="B" class="border rounded w-full py-2 px-4 outline-none focus:shadow-outline">
+                    <input matInput  formControlName="B" class="border shadow-inner rounded w-full py-2 px-4 outline-none focus:shadow-outline">
                 </mat-form-field>
 
                 <mat-form-field class="my-3 border rounded w-full py-1 px-2 outline-none focus:shadow-outline">
@@ -58,13 +66,13 @@
 
         </div>
 
-            <button class="border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" (click)="addQuestion()">Add Question</button>
+            <button class=" hover:bg-blue-700 border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" (click)="addQuestion()">Add Question</button>
            <br>
            <br>
            <br>
            <br>
            
-            <button class="border rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit Form</button>
+            <button class="border hover:bg-blue-700 rounded w-1/2 py-2 border-blue-700 bg-blue-600 text-white mr-5 items-cente" mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Submit Form</button>
 
      </form>
     </div>
