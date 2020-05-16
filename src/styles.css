@@ -2126,6 +2126,36 @@ video {
   background-color: #234e52;
   background-color: rgba(35, 78, 82, var(--bg-opacity));
 }
+.bg-white-smoke {
+  --bg-opacity: 1;
+  background-color: #FAFAFA;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.bg-dark-grayish-red {
+  --bg-opacity: 1;
+  background-color: #575453;
+  background-color: rgba(87, 84, 83, var(--bg-opacity));
+}
+
+.bg-white-smoke {
+  --bg-opacity: 1;
+  background-color: #FAFAFA;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.bg-dark-grayish-red {
+  --bg-opacity: 1;
+  background-color: #575453;
+  background-color: rgba(87, 84, 83, var(--bg-opacity));
+}
+
+
+.bg-Ateneo-Blue {
+  --bg-opacity: 1;
+  background-color: #0A3D62;
+  background-color: rgba(10, 61, 98, var(--bg-opacity));
+}
 
 .bg-blue-100 {
   --bg-opacity: 1;
