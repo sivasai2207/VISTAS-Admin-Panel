@@ -59,9 +59,11 @@ export class QuestionsComponent implements OnInit {
 
 
     try {
+      var loggedinUser = JSON.parse(localStorage.getItem('user'));
+      var userUid = loggedinUser.uid;
 
       console.log(formValue)
-      await this.afs.collection('users').doc(this.user.uid).collection('questions').add(formValue);
+      await this.afs.collection('users').doc(userUid).collection('questions').add(formValue);
       this.success = true;
     } catch(err) {
       console.error(err)
