@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "VISTAS-Admin-Panel",
+      "public": "dist/VISTAS-Admin-Panel",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

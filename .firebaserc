@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "vistas-admin": {
+      "hosting": {
+        "VISTAS-Admin-Panel": [
+          "vistas-admin"
+        ]
+      }
+    }
+  }
+}
