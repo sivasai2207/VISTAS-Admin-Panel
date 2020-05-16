@@ -7,15 +7,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 
-
-import { AppRoutingModule } from './app-routing.module';
+// App components
 import { AppComponent } from './app.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AppRoutingModule } from './app-routing.module';
 import { QuestionsComponent } from './components/questions/questions.component';
+
+
+// Firebase services + enviorment module
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    SignInComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +36,11 @@ import { QuestionsComponent } from './components/questions/questions.component';
     MatButtonModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatChipsModule
+    MatChipsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],

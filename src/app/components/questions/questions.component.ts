@@ -10,11 +10,11 @@ export class QuestionsComponent implements OnInit {
  myForm: FormGroup;
   
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
-
+      examname:'',
       Questions: this.fb.array([])
     })
 
