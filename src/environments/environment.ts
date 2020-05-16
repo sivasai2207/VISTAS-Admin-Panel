@@ -5,14 +5,14 @@
 export const environment = {
   production: false, 
   firebaseConfig : {
-    apiKey: "AIzaSyCHNS_kRmi-NUJrB3dznjG904WyVxySwvc",
-    authDomain: "vistasentranceexam.firebaseapp.com",
-    databaseURL: "https://vistasentranceexam.firebaseio.com",
-    projectId: "vistasentranceexam",
-    storageBucket: "vistasentranceexam.appspot.com",
-    messagingSenderId: "329957386251",
-    appId: "1:329957386251:web:db4d981a7674ea6c04bf0e",
-    measurementId: "G-S9LGZXPZF6"
+    apiKey: "AIzaSyDtnAZoELKmH1xIosPPS_5TsqXFTmuO_Rs",
+    authDomain: "vistas-admin.firebaseapp.com",
+    databaseURL: "https://vistas-admin.firebaseio.com",
+    projectId: "vistas-admin",
+    storageBucket: "vistas-admin.appspot.com",
+    messagingSenderId: "985682094073",
+    appId: "1:985682094073:web:861bcedc3f3db4a46fff28",
+    measurementId: "G-VQNX7FYL66"
   }
 };
 
