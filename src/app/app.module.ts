@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
 import { AuthService } from "./shared/services/auth.service";
 import { AngularFirestore } from '@angular/fire/firestore';
+import { SubmissionComponent } from './components/submission/submission.component';
 
 
 
@@ -31,6 +32,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     QuestionsComponent,
     SignInComponent,
     ForgotPasswordComponent,
+    SubmissionComponent,
     
   ],
   imports: [

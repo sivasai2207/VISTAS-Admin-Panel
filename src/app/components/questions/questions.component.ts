@@ -64,19 +64,22 @@ export class QuestionsComponent implements OnInit {
 
       console.log(formValue)
       await this.afs.collection('users').doc(userUid).collection('questions').add(formValue);
+       this.router.navigate(['submission']);
       this.success = true;
+      
     } catch(err) {
       console.error(err)
     }
 
     this.loading = false;
   }
-Logout(){
+  
+  Logout(){
   return this.afAuth.auth.signOut().then(() => {
     localStorage.removeItem('user');
     this.router.navigate(['sign-in']);
   })
-}
+ }
 }
 
 
