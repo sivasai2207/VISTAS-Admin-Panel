@@ -17,6 +17,9 @@ export class SubmissionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  addQuestionPaper(){
+    this.router.navigate(['questions']);
+  }
   
   Logout(){
     this.auth.SignOut();
