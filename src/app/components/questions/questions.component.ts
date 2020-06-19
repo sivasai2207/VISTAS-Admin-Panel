@@ -23,29 +23,48 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      examname:['', Validators.required],
-      Questions: this.fb.array([])
+      name:['', Validators.required],
+      questions: this.fb.array([])
     })
 
   }
 
   get QuestionForms() {
-    return this.myForm.get('Questions') as FormArray;
+    return this.myForm.get('questions') as FormArray;
   }
 
   addQuestion() {
 
     const Question = this.fb.group({ 
       "questionTypeId": 1,
-      Question: ['',Validators.required],
-      A: ['',Validators.required],
-      B: ['',Validators.required],
-      C: ['',Validators.required],
-      D: ['',Validators.required],
-      Answer :['',Validators.required]
+      "id": 1010,
+      name: ['',Validators.required],
+      options: this.fb.array([
+        this.initOptions(),
+      ]),
+      // a: ['',Validators.required],
+      // b: ['',Validators.required],
+      // c: ['',Validators.required],
+      // d: ['',Validators.required],
+      // Answer :['',Validators.required],
+      "questionType": {
+        "id": 1,
+        "name": "Multiple Choice",
+        "isActive": true
+      }
     })
 
     this.QuestionForms.push(Question);
+  }
+
+  initOptions(){
+    return this.fb.group({
+      "id": "a",
+      A: ['', Validators.required],
+      B: ['', Validators.required],
+      C: ['', Validators.required],
+      D: ['', Validators.required],
+    })
   }
 
   deleteQuestion(i) {
